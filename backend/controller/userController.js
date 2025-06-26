@@ -71,6 +71,8 @@ const loginUser = async (req, res) => {
       expiresIn: "7d",
     });
 
+    console.log("JWT Secret:", process.env.JWT_SECRET);
+
     return res.status(200).json({ message: "Login successful", user, token });
   } catch (error) {
     res.status(500).json({ message: "Login failed", error: error.message });
