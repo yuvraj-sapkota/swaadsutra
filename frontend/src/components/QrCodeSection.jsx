@@ -7,7 +7,7 @@ const QrCodeSection = () => {
 
   const fetchQrImage = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/qrcode/generate", {
+      const res = await fetch("https://swaadsutra.onrender.com/api/qrcode/generate", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

@@ -29,7 +29,7 @@ const ManageMenuItem = () => {
   const getAllCategories = async () => {
     try {
       const res = await fetch(
-        "http://localhost:8000/api/category/getCategory",
+        "https://swaadsutra.onrender.com/api/category/getCategory",
         {
           method: "GET",
         }
@@ -52,7 +52,7 @@ const ManageMenuItem = () => {
 
     try {
       const res = await fetch(
-        "http://localhost:8000/api/category/createCategory",
+        "https://swaadsutra.onrender.com/api/category/createCategory",
         {
           method: "POST",
           headers: {
@@ -80,7 +80,7 @@ const ManageMenuItem = () => {
     e.preventDefault();
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch("http://localhost:8000/api/menu/createMenu", {
+      const res = await fetch("https://swaadsutra.onrender.com/api/menu/createMenu", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -111,7 +111,7 @@ const ManageMenuItem = () => {
   //  fetching the menu item
   const getAllMenu = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/menu/getMenu", {
+      const res = await fetch("https://swaadsutra.onrender.com/api/menu/getMenu", {
         method: "GET",
       });
       const data = await res.json();
@@ -131,7 +131,7 @@ const ManageMenuItem = () => {
     console.log("Delete icon is clicked ");
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch(`http://localhost:8000/api/delete/${id}`, {
+      const res = await fetch(`https://swaadsutra.onrender.com/api/delete/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
