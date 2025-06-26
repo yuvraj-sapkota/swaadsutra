@@ -7,12 +7,15 @@ const QrCodeSection = () => {
 
   const fetchQrImage = async () => {
     try {
-      const res = await fetch("https://swaadsutra.onrender.com/api/qrcode/generate", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        "https://swaadsutra.onrender.com/api/qrcode/generate",
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await res.json();
       setQrImage(data.qrImage);
     } catch (error) {
@@ -33,7 +36,7 @@ const QrCodeSection = () => {
         href={qrImage}
         download="restaurant-qr-code.png"
       >
-        Download QR Code
+        Download QR Code .
       </a>
     </>
   );
