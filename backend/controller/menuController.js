@@ -10,7 +10,7 @@ const createMenuItem = async (req, res) => {
     }
 
     const newItem = new Menu({
-      restaurantId: req.user._id,
+      restaurantId: req.user.id,
       productName,
       productPrice,
       category,
@@ -28,7 +28,7 @@ const createMenuItem = async (req, res) => {
 
 const getAllMenuItems = async (req, res) => {
   try {
-    const items = await Menu.find({ restaurantId: req.user._id });
+    const items = await Menu.find({ restaurantId: req.user.id });
     res
       .status(200)
       .json({ message: "All menu items fetched successfully", items });
@@ -43,7 +43,7 @@ const getAllMenuItems = async (req, res) => {
 const getMenuItemById = async (req, res) => {
   try {
     const { itemId } = req.params.id;
-    const item = await Menu.findById({ itemId, restaurantId: req.user._id });
+    const item = await Menu.findById({ itemId, restaurantId: req.user.id });
     if (!item) {
       return res.status(404).json({ message: "Menu item not found" });
     }

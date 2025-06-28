@@ -8,7 +8,7 @@ const addCategory = async (req, res) => {
       return res.status(400).json({ message: "Category is not available" });
     }
 
-    const newCategory = new Category({ category, restaurantId: req.user._id });
+    const newCategory = new Category({ category, restaurantId: req.user.id });
     await newCategory.save();
 
     return res
@@ -22,7 +22,7 @@ const addCategory = async (req, res) => {
 
 const getCategory = async (req, res) => {
   try {
-    const allCategory = await Category.find({ restaurantId: req.user._id });
+    const allCategory = await Category.find({ restaurantId: req.user.id });
     return res
       .status(200)
       .json({ message: "Available category are", allCategory });
