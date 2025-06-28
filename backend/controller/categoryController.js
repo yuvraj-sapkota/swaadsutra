@@ -5,7 +5,7 @@ const addCategory = async (req, res) => {
     const { category } = req.body;
 
     if (!category) {
-      return res.status(404).json({ message: "Category is not available" });
+      return res.status(400).json({ message: "Category is not available" });
     }
 
     const newCategory = new Category({ category, restaurantId: req.user._id });
