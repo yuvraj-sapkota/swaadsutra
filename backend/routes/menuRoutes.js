@@ -6,8 +6,8 @@ const menuController = require("../controller/menuController");
 const authMiddleware = require("../middleware/authMiddleware");
 
 router.post("/createMenu", authMiddleware, menuController.createMenuItem);
-router.get("/getMenu", menuController.getAllMenuItems);
-router.get("/:id", menuController.getMenuItemById);
+router.get("/getMenu", authMiddleware, menuController.getAllMenuItems);
+router.get("/:id", authMiddleware, menuController.getMenuItemById);
 router.put("/:id", authMiddleware, menuController.updateMenuItem);
 router.delete("/delete/:id", authMiddleware, menuController.deleteMenuItem);
 

@@ -33,7 +33,9 @@ const ManageMenuItem = () => {
         "https://swaadsutra.onrender.com/api/category/getCategory",
         {
           method: "GET",
-          Authorization: `Bearer ${token}`,
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       const data = await res.json();
@@ -59,6 +61,7 @@ const ManageMenuItem = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify({ category: categories }),
         }
@@ -120,6 +123,9 @@ const ManageMenuItem = () => {
         "https://swaadsutra.onrender.com/api/menu/getMenu",
         {
           method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       const data = await res.json();
