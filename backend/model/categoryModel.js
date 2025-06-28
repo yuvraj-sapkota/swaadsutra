@@ -5,6 +5,11 @@ const categorySchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  restaurnatId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user",
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("Category", categorySchema);

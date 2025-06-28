@@ -20,6 +20,7 @@ const ManageMenuItem = () => {
     category: "",
     productImage: "",
   });
+  const token = localStorage.getItem("token");
 
   const handleProductChange = (e) => {
     setProducts((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -32,6 +33,7 @@ const ManageMenuItem = () => {
         "https://swaadsutra.onrender.com/api/category/getCategory",
         {
           method: "GET",
+          Authorization: `Bearer ${token}`,
         }
       );
       const data = await res.json();
@@ -80,14 +82,17 @@ const ManageMenuItem = () => {
     e.preventDefault();
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch("https://swaadsutra.onrender.com/api/menu/createMenu", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(products),
-      });
+      const res = await fetch(
+        "https://swaadsutra.onrender.com/api/menu/createMenu",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(products),
+        }
+      );
 
       const data = await res.json();
 
@@ -111,9 +116,12 @@ const ManageMenuItem = () => {
   //  fetching the menu item
   const getAllMenu = async () => {
     try {
-      const res = await fetch("https://swaadsutra.onrender.com/api/menu/getMenu", {
-        method: "GET",
-      });
+      const res = await fetch(
+        "https://swaadsutra.onrender.com/api/menu/getMenu",
+        {
+          method: "GET",
+        }
+      );
       const data = await res.json();
       console.log(data);
       setMenuDatas(data.items);
@@ -131,12 +139,15 @@ const ManageMenuItem = () => {
     console.log("Delete icon is clicked ");
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch(`https://swaadsutra.onrender.com/api/delete/${id}`, {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        `https://swaadsutra.onrender.com/api/delete/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await res.json();
       console.log(data);
     } catch (error) {
