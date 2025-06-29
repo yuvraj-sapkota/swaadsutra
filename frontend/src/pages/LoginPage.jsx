@@ -36,6 +36,8 @@ const LoginPage = () => {
 
       const data = await res.json();
       localStorage.setItem("information", data);
+      localStorage.setItem("restaurantId", data.user._id);
+
 
       console.log(data);
       if (res.ok && data.token) {
