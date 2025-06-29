@@ -39,7 +39,7 @@ const LoginPage = () => {
       console.log(data);
       if (res.ok && data.token) {
         localStorage.setItem("token", data.token);
-        localStorage.setItem("details", data.user._id);
+        localStorage.setItem("details", data.user);
 
         navigate("/dashboard", {
           state: { message: "Login successful" },
