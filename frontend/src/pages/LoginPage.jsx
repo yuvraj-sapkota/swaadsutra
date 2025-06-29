@@ -38,8 +38,8 @@ const LoginPage = () => {
 
       console.log(data);
       if (res.ok && data.token) {
-        localStorage.setItem("details".data);
         localStorage.setItem("token", data.token);
+        localStorage.setItem("details", data);
 
         navigate("/dashboard", {
           state: { message: "Login successful" },
