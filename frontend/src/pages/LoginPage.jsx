@@ -35,6 +35,7 @@ const LoginPage = () => {
       );
 
       const data = await res.json();
+      localStorage.setItem("details", data);
 
       console.log(data);
       if (res.ok && data.token) {
