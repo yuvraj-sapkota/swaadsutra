@@ -10,6 +10,7 @@ const userRoutes = require("./routes/userRoutes");
 const menuRoutes = require("./routes/menuRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const qrCodeRoutes = require("./routes/qrCodeRoutes");
+const publicMenuRoutes = require("./routes/publicMenuRoutes");
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/menu", menuRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/qrcode", qrCodeRoutes);
+app.use("/api/public", publicMenuRoutes);
 
 // serving all the frontend file    --deploy
 app.use(express.static(path.join(_dirname, "/frontend/dist")));

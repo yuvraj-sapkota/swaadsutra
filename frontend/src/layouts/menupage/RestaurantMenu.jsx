@@ -10,7 +10,7 @@ const RestaurantMenu = () => {
 
   const menuItems = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/menu/getMenu", {
+      const res = await fetch("http://localhost:8000/api/public/menu?restaurantId=${restaurantId}", {
         method: "GET",
       });
 
