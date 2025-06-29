@@ -17,6 +17,7 @@ const QrCodeSection = () => {
         }
       );
       const data = await res.json();
+      console.log(data);
       setQrImage(data.qrImage);
     } catch (error) {
       console.log("Failed to get Qr image", error);
