@@ -11,6 +11,7 @@ const menuRoutes = require("./routes/menuRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const qrCodeRoutes = require("./routes/qrCodeRoutes");
 const publicMenuRoutes = require("./routes/publicMenuRoutes");
+const publicCategoryController = require("./routes/categoryRoutes");
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use("/api/menu", menuRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/qrcode", qrCodeRoutes);
 app.use("/api/public", publicMenuRoutes);
+app.use("/api/publicCategory", publicCategoryController);
 
 // serving all the frontend file    --deploy
 app.use(express.static(path.join(_dirname, "/frontend/dist")));

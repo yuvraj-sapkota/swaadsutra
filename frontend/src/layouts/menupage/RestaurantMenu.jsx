@@ -29,9 +29,10 @@ const RestaurantMenu = () => {
   };
 
   const fetchCategory = async () => {
+    const restaurantId = localStorage.getItem("restaurantId");
     try {
       const res = await fetch(
-        "http://localhost:8000/api/category/getCategory",
+        `http://localhost:8000/api/publicCategory/category?restaurantId=${restaurantId}`,
         {
           method: "GET",
         }
