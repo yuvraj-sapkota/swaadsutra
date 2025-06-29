@@ -124,8 +124,8 @@ const ManageMenuItem = () => {
         {
           method: "GET",
           headers: {
-            Authorization:  `Bearer ${token}`
-          }
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       const data = await res.json();

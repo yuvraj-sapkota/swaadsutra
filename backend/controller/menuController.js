@@ -42,8 +42,8 @@ const getAllMenuItems = async (req, res) => {
 
 const getMenuItemById = async (req, res) => {
   try {
-    const { itemId } = req.params.id;
-    const item = await Menu.findById({ itemId, restaurantId: req.user.id });
+    const itemId = req.params.id;
+    const item = await Menu.findOne({ id: itemId, restaurantId: req.user.id });
     if (!item) {
       return res.status(404).json({ message: "Menu item not found" });
     }
@@ -58,7 +58,7 @@ const getMenuItemById = async (req, res) => {
 
 const updateMenuItem = async (req, res) => {
   try {
-    const updateItem = await Menu.findByIdAndUpdte(req.params.id, req.body, {
+    const updateItem = await Menu.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true,
     });
