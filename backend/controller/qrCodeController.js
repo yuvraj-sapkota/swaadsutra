@@ -1,10 +1,12 @@
 const QRCode = require("qrcode");
 
 const generateQRCode = async (req, res) => {
-  const restaurantId = req.restaurant; // auth middleware bata
+  // const restaurantId = req.restaurant;
   console.log("kajsoedi", req.user);
+  const restaurantId = req.user.id;
 
   const publicUrl = `https://swaadsutra.onrender.com/menupage/${restaurantId}`;
+  console.log(publicUrl);
 
   try {
     const qrImage = await QRCode.toDataURL(publicUrl);
