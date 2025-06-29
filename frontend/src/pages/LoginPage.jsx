@@ -35,14 +35,11 @@ const LoginPage = () => {
       );
 
       const data = await res.json();
-      localStorage.setItem("information", data);
       localStorage.setItem("restaurantId", data.user._id);
-
 
       console.log(data);
       if (res.ok && data.token) {
         localStorage.setItem("token", data.token);
-        localStorage.setItem("details", data.user);
 
         navigate("/dashboard", {
           state: { message: "Login successful" },

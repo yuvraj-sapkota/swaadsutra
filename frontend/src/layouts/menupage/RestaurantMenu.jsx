@@ -9,10 +9,14 @@ const RestaurantMenu = () => {
   const [categoryActive, setCategoryActive] = useState(null);
 
   const menuItems = async () => {
+    const restaurantId = localStorage.getItem("restaurantId");
     try {
-      const res = await fetch("http://localhost:8000/api/public/menu?restaurantId=${restaurantId}", {
-        method: "GET",
-      });
+      const res = await fetch(
+        `http://localhost:8000/api/public/menu?restaurantId=${restaurantId}`,
+        {
+          method: "GET",
+        }
+      );
 
       const data = await res.json();
       const items = data.items;
