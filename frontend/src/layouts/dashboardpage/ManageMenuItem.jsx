@@ -129,7 +129,7 @@ const ManageMenuItem = () => {
         }
       );
       const data = await res.json();
-      console.log(data);
+      console.log("menuis", data);
       setMenuDatas(data.items);
     } catch (error) {
       console.log("Error while fetching menu items from the backend", error);

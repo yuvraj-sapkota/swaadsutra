@@ -43,7 +43,7 @@ const getAllMenuItems = async (req, res) => {
 const getMenuItemById = async (req, res) => {
   try {
     const itemId = req.params.id;
-    const item = await Menu.findOne({ id: itemId, restaurantId: req.user.id });
+    const item = await Menu.findOne({ _id: itemId, restaurantId: req.user.id });
     if (!item) {
       return res.status(404).json({ message: "Menu item not found" });
     }
