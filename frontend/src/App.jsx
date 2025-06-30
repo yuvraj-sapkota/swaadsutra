@@ -21,7 +21,7 @@ const App = () => {
           <Route path="/register" element={<SignupPage />} />
         </Route>
 
-        <Route path="/menupage" element={<MenuPage />} />
+        <Route path="/menupage?restaurantId" element={<MenuPage />} />
 
         {/* protected route  */}
         <Route element={<ProtectedRoute />}>
