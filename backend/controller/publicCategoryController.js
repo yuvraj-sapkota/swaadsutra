@@ -1,5 +1,4 @@
 const Category = require("../model/categoryModel");
-const { get } = require("../routes/publicMenuRoutes");
 
 const getCategoryByRestaurant = async (req, res) => {
   const restaurantId = req.query.restaurantId;
@@ -10,7 +9,7 @@ const getCategoryByRestaurant = async (req, res) => {
 
   try {
     const items = await Category.find({ restaurantId });
-    res.status(200).json({ message: "Available category are", items });
+    res.status(200).json({ message: "Available category are",  items });
   } catch (error) {
     res.status(500).json({ message: "Error fetching menu" });
   }
