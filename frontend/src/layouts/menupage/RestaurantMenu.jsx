@@ -38,7 +38,11 @@ const RestaurantMenu = () => {
         }
       );
       const data = await res.json();
+
+      const items = data.items;
       setCategories(data.items);
+      console.log("category items is ", items);
+
       if (data.items.length > 0) {
         setCategoryActive(data.items[0].category);
       } else {
