@@ -12,7 +12,7 @@ const RestaurantMenu = () => {
     const restaurantId = localStorage.getItem("restaurantId");
     try {
       const res = await fetch(
-        `http://localhost:8000/api/public/menu?restaurantId=${restaurantId}`,
+        `https://swaadsutra.onrender.com/api/public/menu?restaurantId=${restaurantId}`,
         {
           method: "GET",
         }
@@ -32,7 +32,7 @@ const RestaurantMenu = () => {
     const restaurantId = localStorage.getItem("restaurantId");
     try {
       const res = await fetch(
-        `http://localhost:8000/api/publicCategory/category?restaurantId=${restaurantId}`,
+        `https://swaadsutra.onrender.com/api/publicCategory/category?restaurantId=${restaurantId}`,
         {
           method: "GET",
         }

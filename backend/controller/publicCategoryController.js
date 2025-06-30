@@ -10,7 +10,7 @@ const getCategoryByRestaurant = async (req, res) => {
 
   try {
     const items = await Category.find({ restaurantId });
-    res.status(200).json({ message: "Public menu is", items });
+    res.status(200).json({ message: "Available category are", items });
   } catch (error) {
     res.status(500).json({ message: "Error fetching menu" });
   }
