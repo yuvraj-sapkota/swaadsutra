@@ -19,7 +19,7 @@ const RestaurantMenu = () => {
       );
 
       const data = await res.json();
-      const items = data.items;
+      const items = data.menuItems;
 
       setMenuDatas(items);
       console.log(items);
@@ -38,9 +38,9 @@ const RestaurantMenu = () => {
         }
       );
       const data = await res.json();
-      setCategories(data.allCategory);
-      if (data.allCategory.length > 0) {
-        setCategoryActive(data.allCategory[0].category);
+      setCategories(data.items);
+      if (data.items.length > 0) {
+        setCategoryActive(data.items[0].category);
       } else {
         alert("Categories not available");
       }
