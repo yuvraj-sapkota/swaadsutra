@@ -39,12 +39,12 @@ const RestaurantMenu = () => {
       );
       const data = await res.json();
 
-      const items = data.items;
-      setCategories(data.items);
+      const items = data.categoryItems;
+      setCategories(items);
       console.log("category items is ", items);
 
-      if (data.items.length > 0) {
-        setCategoryActive(data.items[0].category);
+      if (items && items.length > 0) {
+        setCategoryActive(items[0].category);
       } else {
         alert("Categories not available");
       }
