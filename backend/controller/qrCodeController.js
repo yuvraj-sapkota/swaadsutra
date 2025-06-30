@@ -1,11 +1,9 @@
 const QRCode = require("qrcode");
 
 const generateQRCode = async (req, res) => {
-  // const restaurantId = req.restaurant;
-  console.log("kajsoedi", req.user);
   const restaurantId = req.user.id;
 
-  const publicUrl = `https://swaadsutra.onrender.com/menupage/${restaurantId}`;
+  const publicUrl = `https://swaadsutra.onrender.com/menupage/`;
   console.log(publicUrl);
 
   try {
