@@ -3,7 +3,7 @@ const router = express.Router();
 const {
   getMenuByRestaurant,
   getCategoryByRestaurant,
-} = require("../controller/publicMenuController");
+} = require("../controller/publicController");
 
 router.get("/menu", getMenuByRestaurant);
 router.get("/category", getCategoryByRestaurant);
