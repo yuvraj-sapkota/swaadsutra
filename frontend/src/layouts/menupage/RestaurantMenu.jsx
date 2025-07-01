@@ -8,13 +8,13 @@ const RestaurantMenu = () => {
   const [menuDatas, setMenuDatas] = useState([]);
   const [categories, setCategories] = useState([]);
   const [categoryActive, setCategoryActive] = useState(null);
-  const { id } = useParams();
+  const { restaurantId } = useParams();
   const menuItems = async () => {
     // const restaurantId = localStorage.getItem("restaurantId");
 
     try {
       const res = await fetch(
-        `https://swaadsutra.onrender.com/api/public/menu/${id}`,
+        `https://swaadsutra.onrender.com/api/public/menu/${restaurantId}`,
         {
           method: "GET",
         }
@@ -34,7 +34,7 @@ const RestaurantMenu = () => {
     // const restaurantId = localStorage.getItem("restaurantId");
     try {
       const res = await fetch(
-        `https://swaadsutra.onrender.com/api/public/category/restaurantId=${id}`,
+        `https://swaadsutra.onrender.com/api/public/category/${restaurantId}`,
         {
           method: "GET",
         }
