@@ -2,17 +2,19 @@ import MobileMenu from "./MobileMenu";
 import MenuForLaptop from "./MenuForLaptop";
 import MenuCategory from "./MenuCategory";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const RestaurantMenu = () => {
   const [menuDatas, setMenuDatas] = useState([]);
   const [categories, setCategories] = useState([]);
   const [categoryActive, setCategoryActive] = useState(null);
-
+  const { id } = useParams();
   const menuItems = async () => {
-    const restaurantId = localStorage.getItem("restaurantId");
+    // const restaurantId = localStorage.getItem("restaurantId");
+
     try {
       const res = await fetch(
-        `https://swaadsutra.onrender.com/api/public/menu/${restaurantId}`,
+        `https://swaadsutra.onrender.com/api/public/menu/${id}`,
         {
           method: "GET",
         }
@@ -29,10 +31,10 @@ const RestaurantMenu = () => {
   };
 
   const fetchCategory = async () => {
-    const restaurantId = localStorage.getItem("restaurantId");
+    // const restaurantId = localStorage.getItem("restaurantId");
     try {
       const res = await fetch(
-        `https://swaadsutra.onrender.com/api/public/category?restaurantId=${restaurantId}`,
+        `https://swaadsutra.onrender.com/api/public/category/restaurantId=${id}`,
         {
           method: "GET",
         }
