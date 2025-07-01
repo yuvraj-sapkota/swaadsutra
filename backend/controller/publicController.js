@@ -2,7 +2,8 @@ const Menu = require("../model/menuModel");
 const Category = require("../model/categoryModel");
 
 const getMenuByRestaurant = async (req, res) => {
-  const restaurantId = req.query.restaurantId;
+  // const restaurantId = req.query.restaurantId;
+  const { restaurantId } = req.params;
 
   if (!restaurantId) {
     return res.status(400).json({ message: "RestaurantId is required" });
@@ -19,7 +20,8 @@ const getMenuByRestaurant = async (req, res) => {
 };
 
 const getCategoryByRestaurant = async (req, res) => {
-  const restaurantId = req.query.restaurantId;
+  // const restaurantId = req.query.restaurantId;
+  const { restaurantId } = req.params;
 
   if (!restaurantId) {
     return res

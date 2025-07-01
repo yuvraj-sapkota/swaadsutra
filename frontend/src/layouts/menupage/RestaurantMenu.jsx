@@ -12,7 +12,7 @@ const RestaurantMenu = () => {
     const restaurantId = localStorage.getItem("restaurantId");
     try {
       const res = await fetch(
-        `https://swaadsutra.onrender.com/api/public/menu?restaurantId=${restaurantId}`,
+        `https://swaadsutra.onrender.com/api/public/menu/${restaurantId}`,
         {
           method: "GET",
         }

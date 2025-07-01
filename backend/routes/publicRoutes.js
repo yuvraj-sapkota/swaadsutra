@@ -5,7 +5,7 @@ const {
   getCategoryByRestaurant,
 } = require("../controller/publicController");
 
-router.get("/menu", getMenuByRestaurant);
-router.get("/category", getCategoryByRestaurant);
+router.get("/menu/:restaurantId", getMenuByRestaurant);
+router.get("/category/:restaurantId", getCategoryByRestaurant);
 
 module.exports = router;
