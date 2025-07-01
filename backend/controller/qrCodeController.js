@@ -3,7 +3,7 @@ const QRCode = require("qrcode");
 const generateQRCode = async (req, res) => {
   const restaurantId = req.user.id;
 
-  const publicUrl = `https://swaadsutra.onrender.com/menupage?restaurantId=${restaurantId}`;
+  const publicUrl = `https://swaadsutra.onrender.com/menupage/${restaurantId}`;
   console.log(publicUrl);
 
   try {
