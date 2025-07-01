@@ -119,7 +119,7 @@ const Sidebar = ({ setActivePage }) => {
                 onClick={() => {
                   setIsActive("profile-setting"),
                     setActivePage("profile-setting");
-                    setIsOpen(!isOpen);
+                  setIsOpen(!isOpen);
                 }}
                 className={`flex items-center ${
                   isActive == "profile-setting"
@@ -152,7 +152,7 @@ const Sidebar = ({ setActivePage }) => {
             onConfirm={() => {
               localStorage.clear();
               setIsActive("logout");
-              navigate("/login");
+              navigate("/navbar");
             }}
             onCancel={() => setShowLogoutPopup(false)}
           />
