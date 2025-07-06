@@ -90,8 +90,8 @@ const LoginPage = () => {
               </button>
             </div>
 
-            <div>
-              <p className="text-[#2E8B57]">Forgot Password?</p>
+            <div className="-mt-6">
+              <p className="text-[#2E8B57] text-end">Forgot Password?</p>
             </div>
 
             <Button type="submit">Login</Button>
