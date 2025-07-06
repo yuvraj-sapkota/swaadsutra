@@ -91,7 +91,7 @@ const LoginPage = () => {
             </div>
 
             <div className="-mt-6">
-              <p className="text-[#2E8B57] text-end">Forgot Password?</p>
+              <p className="text-[#2E8B57] text-end cursor-pointer ">Forgot Password?</p>
             </div>
 
             <Button type="submit">Login</Button>

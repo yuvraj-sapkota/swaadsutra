@@ -1,11 +1,11 @@
 const MobileMenu = ({ menuDatas }) => {
   return (
     <>
-      <div className="md:hidden   max-w-[1300px]  mx-auto px-4 mt-2">
+      <div className="md:hidden   max-w-[1300px]  mx-auto md:px-4 mt-2">
         {menuDatas?.map((menuData, index) => (
           <div
             key={index}
-            className="flex items-center justify-between   py-1 shadow rounded-lg mt-6"
+            className="flex items-center justify-between  px-2  py-1 shadow rounded-lg mt-6"
           >
             <div className="flex items-start flex-col gap-4">
               <h1 className="font-poppins font-semibold text-lg text-gray-900 tracking-normal ">
