@@ -7,7 +7,7 @@ const MobileMenu = ({ menuDatas }) => {
             key={index}
             className="flex items-center justify-between  px-2  py-1 shadow rounded-lg mt-6"
           >
-            <div className="flex items-start flex-col gap-4">
+            <div className="flex items-start flex-col px-2 gap-4">
               <h1 className="font-poppins font-semibold text-lg text-gray-900 tracking-normal ">
                 {menuData.productName}
               </h1>
