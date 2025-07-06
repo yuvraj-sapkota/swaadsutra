@@ -152,7 +152,7 @@ const Sidebar = ({ setActivePage }) => {
             onConfirm={() => {
               localStorage.clear();
               setIsActive("logout");
-              navigate("/navbar");
+              navigate("/");
             }}
             onCancel={() => setShowLogoutPopup(false)}
           />
